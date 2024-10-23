@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+<!--Landing Page  -->
+
+{% block head %}
+{% endblock %}
+
+
+{% block body %}
+<div class="textt">
+
+    <h1 class="barlow-regular">Welcome to ByteSize:</h1>
+    <h2  class="barlow-regular-italic"> Learning Made Effortless!</h2>
+    <br>
+    <a class="nav-link active linkk" aria-current="page" href="/courses">Explore Courses</a>
+
+</div>
+
+<style>
+    body{
+    background-image: url('static/css/aboutback.jpg');
+
+    }
+
+    .textt{
+        color: white;
+        text-align: center;
+        font-size: 50px;
+        margin-top: 180px;
+    }
+
+    .linkk{
+        color: white;
+        font-size: 20px;
+        margin-top: 50px;
+        text-decoration: underline;
+    }
+
+    .barlow-regular {
+        font-family: "Barlow", sans-serif;
+        font-size: 50px;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .barlow-regular-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  font-style: italic;
+}
+
+</style>
+{% endblock %}

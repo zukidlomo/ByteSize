@@ -1,0 +1,78 @@
+
+
+{% extends 'base.html' %}
+<!--  Video Carousel Page  -->
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div>
+    <div id="video-carousel" class="carousel slide" data-ride="false">
+      <div class="carousel-inner">
+        {% for video in videos %}
+          <div class="carousel-item {% if loop.first %}active{% endif %}">
+            <div class="video-container">
+              <button class="like-button">&#x2764;</button>
+              <!-- Unicode heart symbol -->
+              <video class="vid" width="350" height="600"controls loop autoplay preload ="auto">
+                <source src="{{ url_for('static', filename='videos/' + video) }}" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <a class="carousel-control-prev" href="#video-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#video-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+</div>
+
+<style>
+
+    body{
+         background-image: url('static/css/aboutback.jpg');
+        background-size: cover;
+
+    }
+
+
+  .video-container {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+}
+
+  .like-button {
+    position: absolute;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+    z-index: 1;
+    transition: all .5s ease-in-out;
+  }
+
+  .like-button:hover{
+    transform: scale(1.1);
+    cursor:cell;
+  }
+
+  
+
+  
+</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+{% endblock %}
+
+
+
